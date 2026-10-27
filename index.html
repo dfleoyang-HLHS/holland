@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 研究用版本：效度驗證完成前不供搜尋引擎收錄 -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Holland 職業興趣探索</title>
+  <meta name="description" content="60 項工作活動，找出你的 Holland 職業興趣代碼（RIASEC），並取得六型分數與職業領域參考。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%232c5e9e%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-size=%2734%27 font-family=%27Arial,sans-serif%27 font-weight=%27700%27 fill=%27white%27 text-anchor=%27middle%27%3EH%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#2f6f6a">
+  <script>
+    // 套用使用者選擇的深色／淺色模式（放在樣式表前，避免畫面閃爍）
+    try { const t = localStorage.getItem('holland-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=20261027-1">
+</head>
+<body>
+  <main class="container">
+    <header class="site-header home-header">
+      <div>
+        <h1 class="home-title">Holland 職業興趣探索</h1>
+        <p class="home-subtitle">找出你喜歡的工作活動</p>
+      </div>
+    </header>
+
+    <div class="notice research-banner">
+      <p style="margin:0 0 6px"><strong>研究用版本：</strong>中文題目正在進行效度驗證研究，目前僅提供研究參與者使用，結果僅供參考。<a href="research.html">了解研究</a></p>
+      <p style="margin:0">題目譯自美國勞工部 O*NET® 職業興趣量表短版，經本專案修改；美國勞工部並未核准、背書或測試這些修改。<a href="modifications.html">Modifications and disclaimers（修改內容與免責聲明）</a></p>
+    </div>
+
+    <section class="card">
+      <p>從 60 項工作活動中，表達你喜歡或不喜歡的程度，找出你的 Holland 職業興趣代碼（例如 SAI），並取得六型分數、職業領域參考與完整報告。</p>
+      <div class="facts">
+        <div class="fact"><strong>60</strong><span>項活動</span></div>
+        <div class="fact"><strong>約 10</strong><span>分鐘</span></div>
+        <div class="fact"><strong>6</strong><span>種類型</span></div>
+      </div>
+      <div class="btn-row">
+        <a class="btn" id="start-btn" href="quiz.html">開始測驗</a>
+        <a class="btn btn-outline" id="resume-btn" href="quiz.html" hidden>繼續上次的作答</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>題目來源與授權</h2>
+      <p class="small">本測驗題目譯自美國勞工部 O*NET® 職業興趣量表短版（O*NET Interest Profiler Short Form）。</p>
+      <div class="onet-notice small">
+        <p lang="en">This application includes information from the O*NET Career Exploration Tools by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the O*NET Tools Developer License. O*NET® is a trademark of USDOL/ETA. The Holland Career Interest Exploration project has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications.</p>
+        <p>本網站包含美國勞工部就業與訓練署（USDOL/ETA）O*NET 職涯探索工具的內容，依 O*NET Tools Developer License 使用。O*NET® 為 USDOL/ETA 的商標。本專案已修改其中全部或部分內容；USDOL/ETA 並未核准、背書或測試這些修改。</p>
+        <p><a href="modifications.html">Modifications and disclaimers（修改內容與免責聲明）</a></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>六種興趣類型</h2>
+      <ul class="dim-list">
+        <li><span class="letters">R</span><span><strong>實用型</strong>：喜歡動手做，看到具體的成果最有成就感。</span></li>
+        <li><span class="letters">I</span><span><strong>研究型</strong>：喜歡探究原理，從觀察與分析中找到答案。</span></li>
+        <li><span class="letters">A</span><span><strong>藝術型</strong>：喜歡創作與表達，用作品呈現自己的想法。</span></li>
+        <li><span class="letters">S</span><span><strong>社會型</strong>：喜歡與人互動，從幫助他人成長中得到意義。</span></li>
+        <li><span class="letters">E</span><span><strong>企業型</strong>：喜歡領導與說服，推動事情朝目標前進。</span></li>
+        <li><span class="letters">C</span><span><strong>事務型</strong>：喜歡有條理地處理資料，讓事情精確而有秩序。</span></li>
+      </ul>
+      <p class="small muted" style="margin-top:10px">Holland 理論把六種類型排成六角形（R→I→A→S→E→C）。相鄰的類型性質較接近，相對的類型差異最大。</p>
+    </section>
+
+    <section class="card">
+      <h2>作答說明</h2>
+      <ul>
+        <li>下面是各種工作活動。請想一想你有多喜歡做這件事，不必考慮需要多少教育訓練、能賺多少錢，或你是否已經會做。</li>
+        <li>共分 6 個階段，每階段 10 題。每題從 1（非常不喜歡）到 5（非常喜歡）中點選一個；答案沒有對錯之分。</li>
+        <li>可以隨時修改答案或回到上一階段；作答進度只暫存在你的瀏覽器中。</li>
+      </ul>
+      <p class="notice"><strong>隱私說明：</strong>本網站在你的瀏覽器中計分，不蒐集、不傳送任何作答資料或個人資料。</p>
+    </section>
+
+    <section class="card">
+      <h2>搭配性格探索</h2>
+      <p>興趣說明你「喜歡做什麼」，性格類型說明你「習慣怎麼做事」。兩者搭配，可以更完整地認識自己。</p>
+      <div class="btn-row"><a class="btn btn-outline" href="../mbti/">前往 16型MBTI性格探索</a></div>
+    </section>
+
+    <footer class="site-footer">
+      <p>本測驗僅供自我探索參考，非心理診斷工具，不宜作為招募、任用、升遷或職涯決策的唯一依據。本測驗依據 Holland 職業興趣理論，題目譯自 O*NET® 職業興趣量表短版，並非任何官方或商業量表。</p>
+    </footer>
+  </main>
+
+  <script src="js/common.js?v=20261027-1"></script>
+  <script>
+    (() => {
+      const saved = HL.progress.load();
+      const n = saved ? Object.keys(saved.answers).length : 0;
+      if (n > 0) {
+        const resume = document.getElementById('resume-btn');
+        resume.hidden = false;
+        resume.textContent = `繼續上次的作答（已完成 ${n} 題）`;
+        const start = document.getElementById('start-btn');
+        start.textContent = '重新開始';
+        start.href = 'quiz.html?new=1';
+      }
+    })();
+  </script>
+</body>
+</html>

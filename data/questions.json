@@ -1,0 +1,559 @@
+{
+  "version": "0.1.0",
+  "title": "Holland 職業興趣探索 題庫",
+  "status": "研究用版本：譯者一的中文翻譯，待第二份翻譯、整合、回譯、文化調適與專家審閱",
+  "source": {
+    "name": "O*NET Interest Profiler Short Form",
+    "publisher": "U.S. Department of Labor, Employment and Training Administration (USDOL/ETA); developed by the National Center for O*NET Development",
+    "url": "https://www.onetcenter.org/IP.html",
+    "license": "O*NET Tools Developer License",
+    "licenseUrl": "https://www.onetcenter.org/license_toolsdev.html"
+  },
+  "instructions": "下面是各種工作活動。請想一想你有多喜歡做這件事，不必考慮需要多少教育訓練、能賺多少錢，或你是否已經會做。",
+  "scale": [
+    {
+      "value": 1,
+      "label": "非常不喜歡",
+      "score": 0
+    },
+    {
+      "value": 2,
+      "label": "不喜歡",
+      "score": 1
+    },
+    {
+      "value": 3,
+      "label": "不確定",
+      "score": 2
+    },
+    {
+      "value": 4,
+      "label": "喜歡",
+      "score": 3
+    },
+    {
+      "value": 5,
+      "label": "非常喜歡",
+      "score": 4
+    }
+  ],
+  "scoring": {
+    "description": "與 O*NET 電腦版短版相同：每題 0～4 分（畫面 1～5 減 1），每型 10 題加總，範圍 0～40。",
+    "min": 0,
+    "max": 40
+  },
+  "types": [
+    {
+      "code": "R",
+      "name": "實用型",
+      "en": "Realistic"
+    },
+    {
+      "code": "I",
+      "name": "研究型",
+      "en": "Investigative"
+    },
+    {
+      "code": "A",
+      "name": "藝術型",
+      "en": "Artistic"
+    },
+    {
+      "code": "S",
+      "name": "社會型",
+      "en": "Social"
+    },
+    {
+      "code": "E",
+      "name": "企業型",
+      "en": "Enterprising"
+    },
+    {
+      "code": "C",
+      "name": "事務型",
+      "en": "Conventional"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "R",
+      "sourceIndex": 1,
+      "en": "Build kitchen cabinets",
+      "zh": "製作廚房櫥櫃",
+      "note": ""
+    },
+    {
+      "id": 2,
+      "type": "I",
+      "sourceIndex": 1,
+      "en": "Develop a new medicine",
+      "zh": "研發新藥",
+      "note": ""
+    },
+    {
+      "id": 3,
+      "type": "A",
+      "sourceIndex": 1,
+      "en": "Write books or plays",
+      "zh": "寫書或舞台劇劇本",
+      "note": "plays 指舞台劇，譯為「舞台劇劇本」以免與一般「劇本」混淆。"
+    },
+    {
+      "id": 4,
+      "type": "S",
+      "sourceIndex": 1,
+      "en": "Teach an individual an exercise routine",
+      "zh": "一對一教人一套運動訓練",
+      "note": "an individual 強調一對一，譯文保留此意。"
+    },
+    {
+      "id": 5,
+      "type": "E",
+      "sourceIndex": 1,
+      "en": "Buy and sell stocks and bonds",
+      "zh": "買賣股票和債券",
+      "note": ""
+    },
+    {
+      "id": 6,
+      "type": "C",
+      "sourceIndex": 1,
+      "en": "Develop a spreadsheet using computer software",
+      "zh": "用電腦軟體製作試算表",
+      "note": ""
+    },
+    {
+      "id": 7,
+      "type": "R",
+      "sourceIndex": 2,
+      "en": "Lay brick or tile",
+      "zh": "砌磚或鋪磁磚",
+      "note": ""
+    },
+    {
+      "id": 8,
+      "type": "I",
+      "sourceIndex": 2,
+      "en": "Study ways to reduce water pollution",
+      "zh": "研究減少水污染的方法",
+      "note": ""
+    },
+    {
+      "id": 9,
+      "type": "A",
+      "sourceIndex": 2,
+      "en": "Play a musical instrument",
+      "zh": "演奏樂器",
+      "note": ""
+    },
+    {
+      "id": 10,
+      "type": "S",
+      "sourceIndex": 2,
+      "en": "Help people with personal or emotional problems",
+      "zh": "幫助有個人或情緒困擾的人",
+      "note": ""
+    },
+    {
+      "id": 11,
+      "type": "E",
+      "sourceIndex": 2,
+      "en": "Manage a retail store",
+      "zh": "管理一家零售商店",
+      "note": ""
+    },
+    {
+      "id": 12,
+      "type": "C",
+      "sourceIndex": 2,
+      "en": "Proofread records or forms",
+      "zh": "校對紀錄或表格",
+      "note": ""
+    },
+    {
+      "id": 13,
+      "type": "R",
+      "sourceIndex": 3,
+      "en": "Repair household appliances",
+      "zh": "修理家電用品",
+      "note": ""
+    },
+    {
+      "id": 14,
+      "type": "I",
+      "sourceIndex": 3,
+      "en": "Conduct chemical experiments",
+      "zh": "進行化學實驗",
+      "note": ""
+    },
+    {
+      "id": 15,
+      "type": "A",
+      "sourceIndex": 3,
+      "en": "Compose or arrange music",
+      "zh": "作曲或編曲",
+      "note": ""
+    },
+    {
+      "id": 16,
+      "type": "S",
+      "sourceIndex": 3,
+      "en": "Give career guidance to people",
+      "zh": "為人提供職涯輔導",
+      "note": ""
+    },
+    {
+      "id": 17,
+      "type": "E",
+      "sourceIndex": 3,
+      "en": "Operate a beauty salon or barber shop",
+      "zh": "經營美容美髮店或理髮店",
+      "note": "beauty salon 在台灣多指美髮兼美容的店家，譯為「美容美髮店」。"
+    },
+    {
+      "id": 18,
+      "type": "C",
+      "sourceIndex": 3,
+      "en": "Install software across computers on a large network",
+      "zh": "在大型網路中的多台電腦上安裝軟體",
+      "note": ""
+    },
+    {
+      "id": 19,
+      "type": "R",
+      "sourceIndex": 4,
+      "en": "Raise fish in a fish hatchery",
+      "zh": "在魚苗場養殖魚類",
+      "note": "fish hatchery 指人工孵育魚苗的場所，台灣常稱「魚苗場」或「育苗場」。"
+    },
+    {
+      "id": 20,
+      "type": "I",
+      "sourceIndex": 4,
+      "en": "Study the movement of planets",
+      "zh": "研究行星的運行",
+      "note": ""
+    },
+    {
+      "id": 21,
+      "type": "A",
+      "sourceIndex": 4,
+      "en": "Draw pictures",
+      "zh": "畫畫",
+      "note": ""
+    },
+    {
+      "id": 22,
+      "type": "S",
+      "sourceIndex": 4,
+      "en": "Perform rehabilitation therapy",
+      "zh": "進行復健治療",
+      "note": ""
+    },
+    {
+      "id": 23,
+      "type": "E",
+      "sourceIndex": 4,
+      "en": "Manage a department within a large company",
+      "zh": "管理大公司裡的一個部門",
+      "note": ""
+    },
+    {
+      "id": 24,
+      "type": "C",
+      "sourceIndex": 4,
+      "en": "Operate a calculator",
+      "zh": "操作計算機",
+      "note": "此題活動非常簡單，原量表即如此；保留原意，請專家留意作答反應。"
+    },
+    {
+      "id": 25,
+      "type": "R",
+      "sourceIndex": 5,
+      "en": "Assemble electronic parts",
+      "zh": "組裝電子零件",
+      "note": ""
+    },
+    {
+      "id": 26,
+      "type": "I",
+      "sourceIndex": 5,
+      "en": "Examine blood samples using a microscope",
+      "zh": "用顯微鏡檢查血液樣本",
+      "note": ""
+    },
+    {
+      "id": 27,
+      "type": "A",
+      "sourceIndex": 5,
+      "en": "Create special effects for movies",
+      "zh": "為電影製作特效",
+      "note": ""
+    },
+    {
+      "id": 28,
+      "type": "S",
+      "sourceIndex": 5,
+      "en": "Do volunteer work at a non-profit organization",
+      "zh": "在非營利組織擔任志工",
+      "note": ""
+    },
+    {
+      "id": 29,
+      "type": "E",
+      "sourceIndex": 5,
+      "en": "Start your own business",
+      "zh": "自己創業",
+      "note": ""
+    },
+    {
+      "id": 30,
+      "type": "C",
+      "sourceIndex": 5,
+      "en": "Keep shipping and receiving records",
+      "zh": "記錄貨物的出貨與收貨",
+      "note": ""
+    },
+    {
+      "id": 31,
+      "type": "R",
+      "sourceIndex": 6,
+      "en": "Drive a truck to deliver packages to offices and homes",
+      "zh": "開貨車把包裹送到辦公室和住家",
+      "note": ""
+    },
+    {
+      "id": 32,
+      "type": "I",
+      "sourceIndex": 6,
+      "en": "Investigate the cause of a fire",
+      "zh": "調查火災發生的原因",
+      "note": ""
+    },
+    {
+      "id": 33,
+      "type": "A",
+      "sourceIndex": 6,
+      "en": "Paint sets for plays",
+      "zh": "為舞台劇繪製布景",
+      "note": ""
+    },
+    {
+      "id": 34,
+      "type": "S",
+      "sourceIndex": 6,
+      "en": "Teach children how to play sports",
+      "zh": "教孩子從事運動",
+      "note": ""
+    },
+    {
+      "id": 35,
+      "type": "E",
+      "sourceIndex": 6,
+      "en": "Negotiate business contracts",
+      "zh": "洽談商業合約",
+      "note": ""
+    },
+    {
+      "id": 36,
+      "type": "C",
+      "sourceIndex": 6,
+      "en": "Calculate the wages of employees",
+      "zh": "計算員工薪資",
+      "note": ""
+    },
+    {
+      "id": 37,
+      "type": "R",
+      "sourceIndex": 7,
+      "en": "Test the quality of parts before shipment",
+      "zh": "在零件出貨前檢驗品質",
+      "note": ""
+    },
+    {
+      "id": 38,
+      "type": "I",
+      "sourceIndex": 7,
+      "en": "Develop a way to better predict the weather",
+      "zh": "研發更準確預測天氣的方法",
+      "note": ""
+    },
+    {
+      "id": 39,
+      "type": "A",
+      "sourceIndex": 7,
+      "en": "Write scripts for movies or television shows",
+      "zh": "撰寫電影或電視節目的劇本",
+      "note": ""
+    },
+    {
+      "id": 40,
+      "type": "S",
+      "sourceIndex": 7,
+      "en": "Teach sign language to people who are deaf or hard of hearing",
+      "zh": "教聾人或重聽者手語",
+      "note": "依台灣常用、尊重的用語譯為「聾人或重聽者」；請專家確認。"
+    },
+    {
+      "id": 41,
+      "type": "E",
+      "sourceIndex": 7,
+      "en": "Represent a client in a lawsuit",
+      "zh": "在訴訟中代表當事人",
+      "note": "指律師的工作；保留原意，不另加「律師」二字以免變成職業名稱題。"
+    },
+    {
+      "id": 42,
+      "type": "C",
+      "sourceIndex": 7,
+      "en": "Inventory supplies using a hand-held computer",
+      "zh": "用手持式電腦盤點物品",
+      "note": "hand-held computer 在台灣常見的是「手持式盤點機」或「PDA」，請專家評估用詞。"
+    },
+    {
+      "id": 43,
+      "type": "R",
+      "sourceIndex": 8,
+      "en": "Repair and install locks",
+      "zh": "修理和安裝鎖具",
+      "note": "locks 涵蓋門鎖等各類鎖，譯為「鎖具」。"
+    },
+    {
+      "id": 44,
+      "type": "I",
+      "sourceIndex": 8,
+      "en": "Work in a biology lab",
+      "zh": "在生物實驗室工作",
+      "note": ""
+    },
+    {
+      "id": 45,
+      "type": "A",
+      "sourceIndex": 8,
+      "en": "Perform jazz or tap dance",
+      "zh": "表演爵士舞或踢踏舞",
+      "note": "jazz 在此指爵士舞（jazz dance），不是爵士樂。"
+    },
+    {
+      "id": 46,
+      "type": "S",
+      "sourceIndex": 8,
+      "en": "Help conduct a group therapy session",
+      "zh": "協助帶領團體治療",
+      "note": ""
+    },
+    {
+      "id": 47,
+      "type": "E",
+      "sourceIndex": 8,
+      "en": "Market a new line of clothing",
+      "zh": "行銷一系列新款服飾",
+      "note": ""
+    },
+    {
+      "id": 48,
+      "type": "C",
+      "sourceIndex": 8,
+      "en": "Record rent payments",
+      "zh": "登記租金繳納紀錄",
+      "note": ""
+    },
+    {
+      "id": 49,
+      "type": "R",
+      "sourceIndex": 9,
+      "en": "Set up and operate machines to make products",
+      "zh": "架設並操作機器來生產產品",
+      "note": ""
+    },
+    {
+      "id": 50,
+      "type": "I",
+      "sourceIndex": 9,
+      "en": "Invent a replacement for sugar",
+      "zh": "發明糖的替代品",
+      "note": ""
+    },
+    {
+      "id": 51,
+      "type": "A",
+      "sourceIndex": 9,
+      "en": "Sing in a band",
+      "zh": "在樂團裡唱歌",
+      "note": ""
+    },
+    {
+      "id": 52,
+      "type": "S",
+      "sourceIndex": 9,
+      "en": "Take care of children at a day-care center",
+      "zh": "在托育中心照顧孩子",
+      "note": "day-care center 對應台灣的托嬰中心或幼兒園，譯為涵蓋兩者的「托育中心」；請專家確認。"
+    },
+    {
+      "id": 53,
+      "type": "E",
+      "sourceIndex": 9,
+      "en": "Sell merchandise at a department store",
+      "zh": "在百貨公司銷售商品",
+      "note": ""
+    },
+    {
+      "id": 54,
+      "type": "C",
+      "sourceIndex": 9,
+      "en": "Keep inventory records",
+      "zh": "管理庫存紀錄",
+      "note": ""
+    },
+    {
+      "id": 55,
+      "type": "R",
+      "sourceIndex": 10,
+      "en": "Put out forest fires",
+      "zh": "撲滅森林火災",
+      "note": "台灣森林火災較少見，但概念清楚；請專家評估是否需要文化調適。"
+    },
+    {
+      "id": 56,
+      "type": "I",
+      "sourceIndex": 10,
+      "en": "Do laboratory tests to identify diseases",
+      "zh": "做實驗室檢驗來找出疾病",
+      "note": ""
+    },
+    {
+      "id": 57,
+      "type": "A",
+      "sourceIndex": 10,
+      "en": "Edit movies",
+      "zh": "剪輯電影",
+      "note": ""
+    },
+    {
+      "id": 58,
+      "type": "S",
+      "sourceIndex": 10,
+      "en": "Teach a high-school class",
+      "zh": "教一門高中課程",
+      "note": ""
+    },
+    {
+      "id": 59,
+      "type": "E",
+      "sourceIndex": 10,
+      "en": "Manage a clothing store",
+      "zh": "管理一家服飾店",
+      "note": ""
+    },
+    {
+      "id": 60,
+      "type": "C",
+      "sourceIndex": 10,
+      "en": "Stamp, sort, and distribute mail for an organization",
+      "zh": "為機構的郵件蓋章、分類並分送",
+      "note": "stamp 可指蓋郵戳、蓋收文章或貼郵票，譯為「蓋章」較中性；請專家確認。"
+    }
+  ]
+}
