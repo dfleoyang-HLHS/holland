@@ -266,6 +266,14 @@ const HL = (() => {
 
   initThemeToggle();
 
+  // 記錄「曾開啟本網站」，讓 16型性格探索網站只對研究參與者顯示切換標籤
+  // （O*NET 授權：驗證完成前不在公開網站推廣本研究用版本）
+  try {
+    localStorage.setItem('holland-visited', '1');
+  } catch (e) {
+    /* 忽略 */
+  }
+
   return {
     ORDER, loadJSON, rawScores, analyze, encodeRaw, parseRaw, progress, el, list,
     radarChart, scoreBars, interpretNotes, onetNotice, showError, syncThemeColor, inAppNotice,
