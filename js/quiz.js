@@ -168,6 +168,12 @@
     }
     const raw = HL.rawScores(data, answers);
     HL.progress.clear();
+    // 保存最近一次結果，供整合報告使用（只存在使用者自己的瀏覽器）
+    try {
+      localStorage.setItem('holland-last-result', raw.join(','));
+    } catch (e) {
+      /* 忽略 */
+    }
     location.href = 'result.html?' + HL.encodeRaw(raw);
   }
 
