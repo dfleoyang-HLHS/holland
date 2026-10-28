@@ -13,10 +13,14 @@
     // 套用使用者選擇的深色／淺色模式（放在樣式表前，避免畫面閃爍）
     try { const t = localStorage.getItem('holland-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="css/style.css?v=20261027-1">
+  <link rel="stylesheet" href="css/style.css?v=20261028-1">
 </head>
 <body>
   <main class="container">
+    <nav class="site-nav" aria-label="網站切換">
+      <a href="../mbti/">16型性格探索</a>
+      <a href="index.html" aria-current="page">職業興趣探索</a>
+    </nav>
     <header class="site-header home-header">
       <div>
         <h1 class="home-title">Holland 職業興趣探索</h1>
@@ -86,7 +90,7 @@
     </footer>
   </main>
 
-  <script src="js/common.js?v=20261027-1"></script>
+  <script src="js/common.js?v=20261028-1"></script>
   <script>
     (() => {
       const saved = HL.progress.load();
