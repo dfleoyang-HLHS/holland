@@ -186,6 +186,92 @@ const HL = (() => {
     ]);
   }
 
+  // 報告頁共用：PDF 下載（html2pdf.js）、列印／另存 PDF 與返回按鈕
+  function setupPdfToolbar({ report, toolbar, filename, back, autoDownload }) {
+    // 工具列
+    const status = el('p', { class: 'small muted center', role: 'status', 'aria-live': 'polite' });
+    // 備援：自動下載被瀏覽器擋下時（例如部分手機瀏覽器），讓使用者點連結開啟 PDF 再自行儲存
+    const openLink = el('a', { target: '_blank', rel: 'noopener', text: '點這裡開啟 PDF' });
+    const fallback = el('p', { class: 'small center', hidden: '' }, ['沒有開始下載嗎？', openLink, '，再用瀏覽器的「分享」或「下載」功能儲存。']);
+    let pdfUrl = null;
+    const downloadBtn = el('button', { class: 'btn', type: 'button', text: '下載 PDF' });
+    const printBtn = el('button', { class: 'btn btn-outline', type: 'button', text: '列印／另存 PDF' });
+    downloadBtn.addEventListener('click', downloadPdf);
+    printBtn.addEventListener('click', () => window.print());
+    toolbar.replaceChildren(
+      el('div', { class: 'card' }, [
+        el('div', { class: 'btn-row center', style: 'margin-top:0' }, [
+          downloadBtn,
+          printBtn,
+          el('a', { class: 'btn btn-outline', href: back.href, text: back.text }),
+        ]),
+        status,
+        fallback,
+        inAppNotice(),
+      ])
+    );
+
+    // 列印與匯出一律使用淺色版面
+    const root = document.documentElement;
+    let savedTheme = null;
+    function useLightTheme() {
+      savedTheme = root.getAttribute('data-theme');
+      root.setAttribute('data-theme', 'light');
+    }
+    function restoreTheme() {
+      if (savedTheme === null) root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', savedTheme);
+    }
+    window.addEventListener('beforeprint', useLightTheme);
+    window.addEventListener('afterprint', restoreTheme);
+
+    async function downloadPdf() {
+      if (typeof window.html2pdf !== 'function') {
+        status.textContent = '無法使用一鍵下載，已改為開啟列印視窗，請選擇「另存為 PDF」。';
+        window.print();
+        return;
+      }
+      downloadBtn.disabled = true;
+      status.textContent = 'PDF 產生中，請稍候…';
+      useLightTheme();
+      document.body.classList.add('pdf-export');
+      // iOS Safari 的 canvas 面積上限約 1,670 萬像素；依報告高度調降解析度（換頁留白另估 30%）
+      const estHeight = report.offsetHeight * 1.3;
+      const scale = Math.max(1, Math.min(2, Math.sqrt(14e6 / (720 * estHeight))));
+      try {
+        const blob = await window.html2pdf()
+          .set({
+            margin: [12, 12, 12, 12],
+            // 使用英數檔名，避免部分瀏覽器無法處理中文檔名
+            filename,
+            image: { type: 'jpeg', quality: 0.95 },
+            html2canvas: { scale, windowWidth: 800, backgroundColor: '#ffffff' },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            pagebreak: { mode: ['css', 'legacy'], avoid: '.avoid-break' },
+          })
+          .from(report)
+          .outputPdf('blob');
+        if (pdfUrl) URL.revokeObjectURL(pdfUrl);
+        pdfUrl = URL.createObjectURL(blob);
+        const a = el('a', { href: pdfUrl, download: filename });
+        document.body.append(a);
+        a.click();
+        a.remove();
+        openLink.href = pdfUrl;
+        fallback.hidden = false;
+        status.textContent = 'PDF 已產生並開始下載，請到瀏覽器的下載項目查看。';
+      } catch (e) {
+        status.textContent = 'PDF 產生失敗，請改用「列印／另存 PDF」。';
+      } finally {
+        document.body.classList.remove('pdf-export');
+        restoreTheme();
+        downloadBtn.disabled = false;
+      }
+    }
+
+    if (autoDownload) downloadPdf();
+  }
+
   function showError(container, message) {
     container.replaceChildren(
       el('div', { class: 'card error-box' }, [
@@ -276,6 +362,6 @@ const HL = (() => {
 
   return {
     ORDER, loadJSON, rawScores, analyze, encodeRaw, parseRaw, progress, el, list,
-    radarChart, scoreBars, interpretNotes, onetNotice, showError, syncThemeColor, inAppNotice,
+    radarChart, scoreBars, interpretNotes, onetNotice, setupPdfToolbar, showError, syncThemeColor, inAppNotice,
   };
 })();

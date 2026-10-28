@@ -207,6 +207,19 @@ write("report.html", head("完整報告｜Holland 職業興趣探索", extra_css
 </html>
 """)
 
+write("combined.html", head("整合報告｜Holland 職業興趣探索", extra_css=f'  <link rel="stylesheet" href="css/print.css?v={V}">\n') + f"""<body>
+  <main class="container">
+{header(no_print=True)}
+    <div id="toolbar" class="no-print"></div>
+    <article id="report">
+      <p class="muted center">整合報告產生中…</p>
+    </article>
+  </main>
+
+{scripts('common.js', 'vendor/html2pdf.bundle.min.js', 'combined.js', defer=('vendor/html2pdf.bundle.min.js', 'combined.js'))}</body>
+</html>
+""")
+
 # ---------- 修改內容與免責聲明 ----------
 mods = [
     ("翻譯", "60 題英文工作活動譯為正體中文。翻譯程序：兩位譯者各自翻譯、整合、回譯、專家審閱與認知訪談（進行中）。各題翻譯說明見 GitHub 上的 docs/QUESTIONS.md。"),
@@ -215,7 +228,7 @@ mods = [
     ("出題方式", "依 R、I、A、S、E、C 的順序輪流出題，分為 6 個階段、每階段 10 題。"),
     ("計分與解讀", "每型分數計算方式與原量表相同（0～40）。本專案另外新增以下解讀規則，並非原量表內容：換算為 0～100 分、取前三型組成興趣代碼（同分依 R、I、A、S、E、C 排列並標示並列）、一致性、分化程度與整體偏低提醒。"),
     ("結果說明與職業領域", "六型描述、職業領域與職業範例由本專案自行撰寫，並非 O*NET 資料，也未使用 O*NET 職業資料庫。"),
-    ("整合報告", "規劃與「16型MBTI性格探索」的結果整合呈現（尚未推出）。"),
+    ("整合報告", "將本測驗結果與「16型MBTI性格探索」的結果並列呈現，並附上本專案撰寫的 48 則對照說明（非 O*NET 資料）。"),
     ("使用目的", "維持原量表的職涯探索用途。中文版目前為研究用版本，正在進行效度驗證研究。"),
 ]
 mod_rows = "\n".join(f"            <tr><th scope=\"row\">{e(k)}</th><td>{e(v)}</td></tr>" for k, v in mods)

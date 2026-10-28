@@ -20,6 +20,26 @@
   }
 
   const result = HL.analyze(raw, typesData);
+
+  // 整合報告入口：已完成 16 型測驗時直接查看，否則引導先去完成
+  function combinedCard() {
+    let mbti = null;
+    try {
+      mbti = localStorage.getItem('mbti-last-result');
+    } catch (e) {
+      /* 忽略 */
+    }
+    const intro = '興趣說明你「喜歡做什麼」，性格類型說明你「習慣怎麼做事」。兩個測驗都完成後，可以查看整合報告。';
+    return el('section', { class: 'card center' }, [
+      el('h2', { text: '整合報告：性格 × 興趣' }),
+      el('p', { text: intro }),
+      el('div', { class: 'btn-row center' }, [
+        mbti
+          ? el('a', { class: 'btn', href: `combined.html?m=${mbti}&${HL.encodeRaw(raw)}`, text: '查看整合報告' })
+          : el('a', { class: 'btn btn-outline', href: '../mbti/', text: '先完成 16型MBTI性格探索' }),
+      ]),
+    ]);
+  }
   const common = typesData.common;
   const query = HL.encodeRaw(raw);
   document.title = `${result.code}｜Holland 職業興趣探索`;
@@ -60,11 +80,7 @@
       HL.inAppNotice(),
       el('p', { class: 'small muted', style: 'margin-top:12px' }, '小提醒：把這個頁面加入書籤，日後即可再次查看你的結果。'),
     ]),
-    el('section', { class: 'card center' }, [
-      el('h2', { text: '搭配性格探索' }),
-      el('p', { text: '興趣說明你「喜歡做什麼」，性格類型說明你「習慣怎麼做事」。搭配 16 型性格探索，可以更完整地認識自己。' }),
-      el('div', { class: 'btn-row center' }, [el('a', { class: 'btn btn-outline', href: '../mbti/', text: '前往 16型MBTI性格探索' })]),
-    ]),
+    combinedCard(),
     el('div', { class: 'btn-row center' }, [el('a', { class: 'btn-text', href: 'quiz.html?new=1', text: '重新測驗' })]),
     el('footer', { class: 'site-footer' }, [el('p', { text: common.disclaimer }), HL.onetNotice(common)])
   );
