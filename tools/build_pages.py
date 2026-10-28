@@ -37,9 +37,20 @@ def head(title, desc="", extra_css=""):
 """
 
 
+# 網站切換導覽列。依 O*NET 授權，Holland 驗證完成前不在公開的 MBTI 網站放入口，
+# 因此目前只有本網站連到 MBTI；正式推出時再於 MBTI 網站加上對應的導覽列。
+def site_nav(no_print=False):
+    cls = "site-nav no-print" if no_print else "site-nav"
+    return f"""    <nav class="{cls}" aria-label="網站切換">
+      <a href="../mbti/">16型性格探索</a>
+      <a href="index.html" aria-current="page">職業興趣探索</a>
+    </nav>
+"""
+
+
 def header(no_print=False):
     cls = "site-header no-print" if no_print else "site-header"
-    return f"""    <header class="{cls}">
+    return site_nav(no_print) + f"""    <header class="{cls}">
       <a class="site-title" href="index.html">Holland 職業興趣探索</a>
     </header>
 """
@@ -82,7 +93,7 @@ type_rows = "\n".join(
 # ---------- 首頁 ----------
 write("index.html", head("Holland 職業興趣探索", "60 項工作活動，找出你的 Holland 職業興趣代碼（RIASEC），並取得六型分數與職業領域參考。") + f"""<body>
   <main class="container">
-    <header class="site-header home-header">
+{site_nav()}    <header class="site-header home-header">
       <div>
         <h1 class="home-title">Holland 職業興趣探索</h1>
         <p class="home-subtitle">找出你喜歡的工作活動</p>
