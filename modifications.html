@@ -12,7 +12,7 @@
     // 套用使用者選擇的深色／淺色模式（放在樣式表前，避免畫面閃爍）
     try { const t = localStorage.getItem('holland-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
   </script>
-  <link rel="stylesheet" href="css/style.css?v=20261028-3">
+  <link rel="stylesheet" href="css/style.css?v=20261028-4">
 </head>
 <body>
   <main class="container doc-page">
@@ -54,7 +54,7 @@
             <tr><th scope="row">出題方式</th><td>依 R、I、A、S、E、C 的順序輪流出題，分為 6 個階段、每階段 10 題。</td></tr>
             <tr><th scope="row">計分與解讀</th><td>每型分數計算方式與原量表相同（0～40）。本專案另外新增以下解讀規則，並非原量表內容：換算為 0～100 分、取前三型組成興趣代碼（同分依 R、I、A、S、E、C 排列並標示並列）、一致性、分化程度與整體偏低提醒。</td></tr>
             <tr><th scope="row">結果說明與職業領域</th><td>六型描述、職業領域與職業範例由本專案自行撰寫，並非 O*NET 資料，也未使用 O*NET 職業資料庫。</td></tr>
-            <tr><th scope="row">整合報告</th><td>規劃與「16型MBTI性格探索」的結果整合呈現（尚未推出）。</td></tr>
+            <tr><th scope="row">整合報告</th><td>將本測驗結果與「16型MBTI性格探索」的結果並列呈現，並附上本專案撰寫的 48 則對照說明（非 O*NET 資料）。</td></tr>
             <tr><th scope="row">使用目的</th><td>維持原量表的職涯探索用途。中文版目前為研究用版本，正在進行效度驗證研究。</td></tr>
           </tbody>
         </table>
@@ -76,6 +76,6 @@
       <p>本測驗僅供自我探索參考，非心理診斷工具，不宜作為招募、任用、升遷或職涯決策的唯一依據。本測驗依據 Holland 職業興趣理論，題目譯自 O*NET® 職業興趣量表短版，並非任何官方或商業量表。</p>
     </footer>
   </main>
-  <script src="js/common.js?v=20261028-3"></script>
+  <script src="js/common.js?v=20261028-4"></script>
 </body>
 </html>

@@ -558,3 +558,11 @@ body[data-stage] { transition: background-color 0.3s ease; }
 @media (hover: hover) and (pointer: fine) {
   .site-nav a:not([aria-current]):hover { border-color: var(--accent); color: var(--accent); }
 }
+
+/* 整合報告 */
+.combo-grid { display: grid; gap: 0 16px; }
+@media (min-width: 720px) {
+  .combo-grid { grid-template-columns: 1fr 1fr; }
+}
+body.pdf-export .combo-grid { grid-template-columns: 1fr 1fr; }
+.combo-code { font-size: 1.25rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
